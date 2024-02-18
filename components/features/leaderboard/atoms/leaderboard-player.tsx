@@ -24,7 +24,7 @@ export const LeaderBoardPlayer: React.FC<LeaderBoardPlayerProps> = ({
         <div className='flex items-center gap-2'>
           <h6 className='font-medium text-base'>@{player.name}</h6>
           {!!player.twitter && (
-            <Link href={player.twitter}>
+            <Link href={`https://twitter.com/${player.twitter}`}>
               <XIcon size={24} />
             </Link>
           )}
@@ -34,7 +34,10 @@ export const LeaderBoardPlayer: React.FC<LeaderBoardPlayerProps> = ({
           <div className='sm:w-auto w-[50px] truncate'>
             {player.mainAddress}
           </div>
-          <Link href={player.mainAddress} target='_blank'>
+          <Link
+            href={`https://etherscan.io/address/${player.mainAddress}`}
+            target='_blank'
+          >
             <ExternalLinkIcon size={16} />
           </Link>
         </div>
